@@ -742,9 +742,10 @@ textarea { resize: vertical; min-height: 110px; }
 .gift-sort-toggle {
   appearance: none;
   position: relative;
-  width: 36px;
+  width: auto;
   height: 36px;
-  padding: 0;
+  padding: 0 10px;
+  gap: 8px;
   border: 0;
   background: transparent;
   color: var(--terracotta);
@@ -769,8 +770,8 @@ textarea { resize: vertical; min-height: 110px; }
 }
 .gift-sort-dot {
   position: absolute;
-  top: 7px;
-  right: 7px;
+  top: 4px;
+  right: 2px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -880,7 +881,7 @@ textarea { resize: vertical; min-height: 110px; }
     margin: -12px 0 10px;
   }
   .gift-sort-toggle {
-    width: 36px;
+    width: auto;
     height: 36px;
   }
   .gift-sort-menu {
@@ -997,3 +998,11 @@ textarea { resize: vertical; min-height: 110px; }
   color: var(--terracotta);
 }
 .volt-note strong { font-weight: 600; }
+
+.gift-sort-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
