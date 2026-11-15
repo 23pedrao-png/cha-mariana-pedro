@@ -1006,3 +1006,17 @@ textarea { resize: vertical; min-height: 110px; }
   text-transform: uppercase;
   white-space: nowrap;
 }
+
+.gift-reminder {
+  max-width: 600px;
+  margin: -12px auto 32px;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--terracotta);
+}
+@media (max-width: 640px) {
+  .gift-reminder { font-size: 0.95rem; margin: -8px auto 28px; padding: 0 8px; }
+}
