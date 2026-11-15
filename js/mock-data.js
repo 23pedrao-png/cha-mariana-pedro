@@ -47,6 +47,11 @@ window.MOCK_EVENT = {
     { id: "jogo-de-facas", name: "Jogo de facas com cepo", description: "Facas de qualidade para o preparo do dia a dia.", price: 229.9, image: "img/gifts/jogo-de-facas.svg", storeUrl: "https://www.exemplo-loja.com.br/produto/jogo-de-facas", purchased: false },
     { id: "batedeira", name: "Batedeira planetária", description: "Ideal para massas, bolos e receitas especiais.", price: 479.9, image: "img/gifts/batedeira.svg", storeUrl: "https://www.exemplo-loja.com.br/produto/batedeira-planetaria", purchased: false },
     { id: "aparelho-de-jantar", name: "Aparelho de jantar", description: "Conjunto 20 peças para receber família e amigos.", price: 329.9, image: "img/gifts/aparelho-de-jantar.svg", storeUrl: "https://www.exemplo-loja.com.br/produto/aparelho-de-jantar", purchased: false },
-    { id: "microondas", name: "Micro-ondas 20L", description: "Compacto e eficiente para o dia a dia do casal.", price: 599.9, image: "img/gifts/microondas.svg", storeUrl: "https://www.exemplo-loja.com.br/produto/microondas", purchased: false }
+    { id: "microondas", name: "Micro-ondas 20L", description: "Compacto e eficiente para o dia a dia do casal.", price: 599.9, image: "img/gifts/microondas.svg", storeUrl: "https://www.exemplo-loja.com.br/produto/microondas", purchased: false },
+    { id: "forno-eletrico", name: "Forno elétrico Mondial 42L", description: "Capacidade de 42 litros, para assar, gratinar e aquecer no dia a dia.", price: 324.9, image: "img/gifts/forno-eletrico.svg", storeUrl: "https://link.amazon/B0gD0kV6A", purchased: false },
+    { id: "purificador", name: "Purificador de água Philco", description: "Água natural e gelada, compacto e fácil de instalar.", price: 396.9, image: "img/gifts/purificador.svg", storeUrl: "https://link.amazon/B07FVRSGX", purchased: false },
+    { id: "vaporizador", name: "Vaporizador de roupas WAP", description: "Prático para desamassar roupas no cabide, com vapor quente.", price: 114.9, image: "img/gifts/vaporizador.svg", storeUrl: "https://link.amazon/B01cMShjJ", purchased: false },
+    { id: "ferro-de-passar", name: "Ferro de passar Oster", description: "Base antiaderente e vapor, compacto para o dia a dia.", price: 89.9, image: "img/gifts/ferro-de-passar.svg", storeUrl: "https://link.amazon/B01wjjNGB", purchased: false }
+
   ]
 };

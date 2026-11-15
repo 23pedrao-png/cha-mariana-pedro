@@ -137,7 +137,7 @@
         </div>
         <div class="gift-body">
           <h3>${gift.name}</h3>
-          <p class="volt-badge"><span aria-hidden="true">⚡</span> Voltagem: 127V</p>
+          <p class="volt-badge"><svg class="volt-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg> Voltagem: 127V</p>
           <p class="gift-desc">${gift.description || ""}</p>
           <p class="gift-price">${money.format(gift.price)}</p>
           ${gift.purchased ? `<p class="purchased-by">Presenteado por ${escapeHtml(gift.purchasedBy || "alguém especial")}</p>` : `

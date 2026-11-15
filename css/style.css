@@ -790,6 +790,19 @@ textarea { resize: vertical; min-height: 110px; }
 }
 .modal-card .volt-badge { align-self: center; margin: 6px 0 4px; }
 .gift-card.is-purchased .volt-badge { opacity: 0.85; }
+.volt-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  display: block;
+}
+.volt-badge .volt-icon { stroke: #fff; }
+.volt-note .volt-icon {
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 2px;
+  stroke: currentColor;
+}
 .volt-note {
   max-width: 600px;
   margin: -16px auto 36px;
