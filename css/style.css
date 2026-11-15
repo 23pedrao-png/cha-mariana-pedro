@@ -768,3 +768,39 @@ textarea { resize: vertical; min-height: 110px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* ---------- Voltagem 127V ---------- */
+.volt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin: 2px 0;
+  padding: 4px 12px 3px;
+  background: var(--terracotta);
+  color: var(--paper-light);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  outline: 1px solid var(--terracotta);
+  outline-offset: 2px;
+}
+.modal-card .volt-badge { align-self: center; margin: 6px 0 4px; }
+.gift-card.is-purchased .volt-badge { opacity: 0.85; }
+.volt-note {
+  max-width: 600px;
+  margin: -16px auto 36px;
+  padding: 12px 18px;
+  border: 1px solid var(--terracotta);
+  outline: 1px solid var(--terracotta-soft);
+  outline-offset: 4px;
+  background: rgba(251, 249, 245, 0.8);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: var(--terracotta);
+}
+.volt-note strong { font-weight: 600; }
