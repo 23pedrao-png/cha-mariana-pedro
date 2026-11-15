@@ -69,7 +69,7 @@
       width: 480,
       margin: 2,
       errorCorrectionLevel: "M",
-      color: { dark: "#5C3030", light: "#FBF8F4" },
+      color: { dark: "#4A2F26", light: "#FFFFFF" },
     });
   }
 

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#5C3030" />
-  <title>Chá de Casa Nova e Noivado · Mariana e Pedro</title>
-  <meta name="description" content="Celebre conosco o chá de casa nova e noivado de Mariana e Pedro, no dia 30 de janeiro de 2027, em Belo Horizonte." />
+  <meta name="theme-color" content="#F3F1EC" />
+  <title>Chá Bar &amp; Noivado · Mariana e Pedro</title>
+  <meta name="description" content="Celebre conosco o chá bar e noivado de Mariana e Pedro, no dia 30 de janeiro de 2027, em Belo Horizonte." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Sacramento&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -20,7 +20,7 @@
 
   <header class="site-header" id="topo">
     <div class="header-inner">
-      <a class="logo" href="#topo">M &amp; P</a>
+      <a class="logo" href="#topo">M <span>&amp;</span> P</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
@@ -35,34 +35,47 @@
 
   <main id="conteudo">
     <section class="hero" aria-label="Convite">
-      <div class="hero-ornament" aria-hidden="true"></div>
-      <p class="eyebrow">Convite especial</p>
-      <p class="event-kicker" data-event-title>Chá de Casa Nova e Noivado</p>
-      <h1 class="couple-names" data-couple-names>Mariana e Pedro</h1>
-      <div class="flourish" aria-hidden="true">
-        <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 10h70M198 10h-70" stroke="currentColor" stroke-width="1"/>
-          <path d="M100 2c8 8 8 16 0 16-8-8-8-16 0-16z" stroke="currentColor" fill="none"/>
-        </svg>
+      <div class="hero-frame">
+        <div class="hero-card">
+          <p class="hero-script hero-script-top">chá bar</p>
+          <h1 class="hero-names">
+            <span class="hero-name">Mariana</span>
+            <span class="hero-amp" aria-label="e">&amp;</span>
+            <span class="hero-name">Pedro</span>
+          </h1>
+          <p class="hero-script hero-script-bottom">noivado</p>
+          <div class="hero-meta">
+            <div class="ornament" aria-hidden="true"><span></span></div>
+            <p class="hero-date" data-hero-date>Sábado, 30 de janeiro de 2027 · 16h</p>
+            <p class="hero-place">Salão de festas · Rua Psi, 185 · Caiçara · Belo Horizonte</p>
+          </div>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#presenca">Confirmar presença</a>
+            <a class="btn btn-secondary" href="#presentes">Lista de presentes</a>
+          </div>
+        </div>
       </div>
-      <p class="hero-date" data-hero-date>Sábado, 30 de janeiro de 2027 · 16h</p>
-      <p class="hero-lead" data-hero-lead></p>
-      <div class="countdown" id="countdown" aria-live="polite">
-        <div class="count-item"><span class="count-value" data-days>0</span><span class="count-label">dias</span></div>
-        <div class="count-item"><span class="count-value" data-hours>0</span><span class="count-label">horas</span></div>
-        <div class="count-item"><span class="count-value" data-minutes>0</span><span class="count-label">minutos</span></div>
-        <div class="count-item"><span class="count-value" data-seconds>0</span><span class="count-label">segundos</span></div>
-      </div>
-      <a class="btn btn-primary hero-cta" href="#presenca">Confirmar presença</a>
     </section>
+
+    <section class="section section-intro" aria-label="Contagem regressiva">
+      <div class="section-inner narrow">
+        <p class="hero-lead" data-hero-lead></p>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="count-item"><span class="count-value" data-days>0</span><span class="count-label">dias</span></div>
+          <div class="count-item"><span class="count-value" data-hours>0</span><span class="count-label">horas</span></div>
+          <div class="count-item"><span class="count-value" data-minutes>0</span><span class="count-label">minutos</span></div>
+          <div class="count-item"><span class="count-value" data-seconds>0</span><span class="count-label">segundos</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="frieze" aria-hidden="true"></div>
 
     <section id="quando" class="section section-when">
       <div class="section-inner">
-        <p class="eyebrow">A celebração</p>
+        <p class="eyebrow script">A celebração</p>
         <h2>Data, local e mapa</h2>
-        <div class="flourish small" aria-hidden="true">
-          <svg viewBox="0 0 200 20" fill="none"><path d="M40 10h50M160 10h-50" stroke="currentColor" stroke-width="1"/><path d="M100 4c6 6 6 12 0 12-6-6-6-12 0-12z" stroke="currentColor"/></svg>
-        </div>
+        <div class="ornament" aria-hidden="true"><span></span></div>
 
         <div class="when-grid">
           <article class="info-card">
@@ -94,8 +107,9 @@
 
     <section id="presenca" class="section section-rsvp">
       <div class="section-inner narrow">
-        <p class="eyebrow">Esperamos você</p>
+        <p class="eyebrow script">Esperamos você</p>
         <h2>Confirmação de presença</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-lead">Conte pra gente se poderá celebrar esse momento conosco. É rápido e nos ajuda muito na organização.</p>
 
         <form id="rsvp-form" class="rsvp-form" novalidate>
@@ -134,10 +148,13 @@
       </div>
     </section>
 
+    <div class="frieze" aria-hidden="true"></div>
+
     <section id="presentes" class="section section-gifts">
       <div class="section-inner">
-        <p class="eyebrow">Para o nosso lar</p>
+        <p class="eyebrow script">Para o nosso lar</p>
         <h2>Lista de presentes</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-lead" data-gifts-intro></p>
         <div class="gift-grid" id="gift-grid"></div>
       </div>
@@ -145,8 +162,9 @@
 
     <section id="pix" class="section section-pix">
       <div class="section-inner narrow">
-        <p class="eyebrow">Presente em dinheiro</p>
+        <p class="eyebrow script">Presente em dinheiro</p>
         <h2>Pix para o casal</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-lead" data-pix-intro></p>
         <div class="pix-card" data-pix-card>
           <p class="pix-badge" data-pix-badge hidden>Chave de exemplo</p>
@@ -162,16 +180,20 @@
   </main>
 
   <footer class="site-footer">
-    <p class="footer-mono">M &amp; P</p>
-    <p>Mariana e Pedro · 30 de janeiro de 2027</p>
-    <p class="footer-note">Feito com carinho para o nosso chá de casa nova e noivado.</p>
+    <div class="frieze" aria-hidden="true"></div>
+    <div class="footer-inner">
+      <p class="footer-script">chá bar &amp; noivado</p>
+      <p class="footer-mono">M <span>&amp;</span> P</p>
+      <p class="footer-names"><span data-couple-names>Mariana e Pedro</span> · 30 de janeiro de 2027</p>
+      <p class="footer-note">Feito com carinho para o nosso chá bar e noivado.</p>
+    </div>
   </footer>
 
   <div class="modal" id="modal-pix" hidden>
     <div class="modal-backdrop" data-close-modal></div>
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="pix-modal-title">
       <button class="modal-close" type="button" data-close-modal aria-label="Fechar">&times;</button>
-      <p class="eyebrow">Presentear via Pix</p>
+      <p class="eyebrow script">Presentear via Pix</p>
       <h3 id="pix-modal-title">Presente</h3>
       <p class="modal-price" data-modal-price></p>
       <img class="pix-qr" data-modal-qr alt="QR Code da chave Pix" src="" width="240" height="240" />
