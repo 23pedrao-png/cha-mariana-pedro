@@ -789,6 +789,7 @@ textarea { resize: vertical; min-height: 110px; }
   outline-offset: 2px;
 }
 .modal-card .volt-badge { align-self: center; margin: 6px 0 4px; }
+.volt-badge[hidden] { display: none; }
 .gift-card.is-purchased .volt-badge { opacity: 0.85; }
 .volt-icon {
   width: 14px;
