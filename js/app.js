@@ -124,35 +124,6 @@
     refreshCashQr();
   }
 
-
-  const ELECTRIC_IDS = new Set([
-    "liquidificador",
-    "airfryer",
-    "cafeteira",
-    "aspirador",
-    "batedeira",
-    "microondas",
-    "forno-eletrico",
-    "purificador",
-    "vaporizador",
-    "ferro-de-passar",
-  ]);
-
-  const VOLT_ICON = '<svg class="volt-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>';
-
-  function giftVoltage(gift) {
-    const fromSheet = String(gift.voltagem || "").trim();
-    if (fromSheet) return fromSheet;
-    // Fallback until the deployed Apps Script starts returning the voltagem column.
-    if (ELECTRIC_IDS.has(gift.id)) return "127V";
-    return "";
-  }
-
-  function voltBadgeHtml(voltage) {
-    if (!voltage) return "";
-    return `<p class="volt-badge">${VOLT_ICON} Voltagem: ${escapeHtml(voltage)}</p>`;
-  }
-
   function renderGifts(gifts) {
     giftGrid.innerHTML = "";
     gifts.forEach((gift) => {
@@ -166,7 +137,6 @@
         </div>
         <div class="gift-body">
           <h3>${gift.name}</h3>
-          ${voltBadgeHtml(giftVoltage(gift))}
           <p class="gift-desc">${gift.description || ""}</p>
           <p class="gift-price">${money.format(gift.price)}</p>
           ${gift.purchased ? `<p class="purchased-by">Presenteado por ${escapeHtml(gift.purchasedBy || "alguém especial")}</p>` : `
@@ -203,12 +173,6 @@
     state.pendingMethod = "pix";
     pixModal.querySelector("#pix-modal-title").textContent = gift.name;
     pixModal.querySelector("[data-modal-price]").textContent = money.format(gift.price);
-    const voltEl = pixModal.querySelector("[data-modal-volt]");
-    if (voltEl) {
-      const voltage = giftVoltage(gift);
-      voltEl.hidden = !voltage;
-      if (voltage) voltEl.innerHTML = `${VOLT_ICON} Voltagem: ${escapeHtml(voltage)}`;
-    }
     try {
       state.lastGiftPayload = window.PixBR.buildPayload(pixOptions({
         amount: gift.price,
