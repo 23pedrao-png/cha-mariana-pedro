@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Sacramento&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=12" />
+  <link rel="stylesheet" href="css/style.css?v=13" />
 </head>
 <body>
   <div class="preview-banner" id="preview-banner" hidden>
@@ -157,6 +157,14 @@
         <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-lead" data-gifts-intro></p>
         <p class="volt-note"><svg class="volt-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg> <strong>Atenção:</strong> todos os eletrodomésticos devem ser <strong>127V</strong>.</p>
+        <div class="gift-sort">
+          <p class="gift-sort-label" id="gift-sort-label">Ordenar</p>
+          <div class="gift-sort-pills" role="group" aria-labelledby="gift-sort-label">
+            <button type="button" class="gift-sort-btn is-active" data-sort="padrao" aria-pressed="true">Padrão</button>
+            <button type="button" class="gift-sort-btn" data-sort="menor" aria-pressed="false">Menor preço</button>
+            <button type="button" class="gift-sort-btn" data-sort="maior" aria-pressed="false">Maior preço</button>
+          </div>
+        </div>
         <div class="gift-grid" id="gift-grid"></div>
       </div>
     </section>
@@ -226,11 +234,11 @@
 
   <div class="toast" id="toast" hidden role="status"></div>
 
-  <script src="js/config.js?v=12"></script>
-  <script src="js/qrcode.min.js?v=12"></script>
-  <script src="js/pix.js?v=12"></script>
-  <script src="js/mock-data.js?v=12"></script>
-  <script src="js/api.js?v=12"></script>
-  <script src="js/app.js?v=12"></script>
+  <script src="js/config.js?v=13"></script>
+  <script src="js/qrcode.min.js?v=13"></script>
+  <script src="js/pix.js?v=13"></script>
+  <script src="js/mock-data.js?v=13"></script>
+  <script src="js/api.js?v=13"></script>
+  <script src="js/app.js?v=13"></script>
 </body>
 </html>

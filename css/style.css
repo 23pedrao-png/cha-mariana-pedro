@@ -723,6 +723,69 @@ textarea { resize: vertical; min-height: 110px; }
   outline-offset: 3px;
 }
 
+
+/* ---------- Ordenação da lista de presentes ---------- */
+.gift-sort {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: -8px auto 32px;
+  max-width: 100%;
+}
+.gift-sort-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+.gift-sort-pills {
+  display: inline-flex;
+  max-width: 100%;
+  border: 1px solid rgba(138, 79, 61, 0.4);
+  background: rgba(255, 255, 255, 0.45);
+}
+.gift-sort-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--terracotta);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  min-height: 40px;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.gift-sort-btn + .gift-sort-btn {
+  border-left: 1px solid rgba(138, 79, 61, 0.28);
+}
+.gift-sort-btn:hover:not(.is-active) {
+  background: var(--terracotta-soft);
+}
+.gift-sort-btn.is-active {
+  background: var(--terracotta);
+  color: var(--paper-light);
+  font-weight: 500;
+}
+.gift-sort-btn:focus-visible {
+  outline: 1px dashed var(--terracotta);
+  outline-offset: 3px;
+  z-index: 1;
+}
+@media (min-width: 641px) {
+  .gift-sort {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
 /* ---------- Responsivo ---------- */
 @media (min-width: 1500px) { :root { --tile: calc(100vw / 18); } }
 @media (max-width: 1100px) { :root { --tile: calc(100vw / 12); } }
@@ -764,6 +827,21 @@ textarea { resize: vertical; min-height: 110px; }
 }
 
 @media (max-width: 640px) {
+  .gift-sort {
+    margin: -8px auto 20px;
+    gap: 8px;
+  }
+  .gift-sort-pills {
+    width: 100%;
+    max-width: 420px;
+  }
+  .gift-sort-btn {
+    flex: 1 1 0;
+    padding: 7px 6px;
+    min-height: 34px;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+  }
   .section-gifts {
     padding-left: 12px;
     padding-right: 12px;

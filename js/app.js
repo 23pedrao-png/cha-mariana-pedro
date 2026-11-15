@@ -8,7 +8,11 @@
     pendingMethod: "pix",
     lastPayload: "",
     lastGiftPayload: "",
+    sortMode: "padrao",
   };
+
+  const SORT_KEY = "cha-mp-gift-sort";
+  const SORT_MODES = ["padrao", "menor", "maior"];
 
   const giftGrid = document.getElementById("gift-grid");
   const toastEl = document.getElementById("toast");
@@ -124,9 +128,63 @@
     refreshCashQr();
   }
 
+  function readStoredSort() {
+    try {
+      const stored = localStorage.getItem(SORT_KEY);
+      if (SORT_MODES.includes(stored)) return stored;
+    } catch {}
+    return "padrao";
+  }
+
+  function persistSort(mode) {
+    try { localStorage.setItem(SORT_KEY, mode); } catch {}
+  }
+
+  function numericPrice(gift) {
+    const raw = gift && gift.price;
+    if (typeof raw === "number") return Number.isFinite(raw) ? raw : null;
+    if (typeof raw !== "string") return null;
+    const trimmed = raw.trim();
+    if (!trimmed) return null;
+    let normalized = trimmed.replace(/[^\d,.-]/g, "");
+    if (!normalized) return null;
+    if (normalized.includes(",") && normalized.includes(".")) {
+      normalized = normalized.replace(/\./g, "").replace(",", ".");
+    } else if (normalized.includes(",")) {
+      normalized = normalized.replace(",", ".");
+    }
+    const n = Number(normalized);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function sortedGifts(gifts, mode) {
+    const list = gifts.map((gift, index) => ({ gift, index }));
+    if (mode === "menor" || mode === "maior") {
+      const dir = mode === "menor" ? 1 : -1;
+      list.sort((a, b) => {
+        const pa = numericPrice(a.gift);
+        const pb = numericPrice(b.gift);
+        if (pa == null && pb == null) return a.index - b.index;
+        if (pa == null) return 1;
+        if (pb == null) return -1;
+        if (pa !== pb) return (pa - pb) * dir;
+        return a.index - b.index;
+      });
+    }
+    return list.map((item) => item.gift);
+  }
+
+  function syncSortButtons() {
+    document.querySelectorAll(".gift-sort-btn").forEach((btn) => {
+      const active = btn.dataset.sort === state.sortMode;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+  }
+
   function renderGifts(gifts) {
     giftGrid.innerHTML = "";
-    gifts.forEach((gift) => {
+    sortedGifts(gifts, state.sortMode).forEach((gift) => {
       const card = document.createElement("article");
       card.className = "gift-card" + (gift.purchased ? " is-purchased" : "");
       card.dataset.id = gift.id;
@@ -289,6 +347,20 @@
     a.addEventListener("click", () => {
       header.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+
+  state.sortMode = readStoredSort();
+  syncSortButtons();
+  document.querySelectorAll(".gift-sort-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const mode = btn.dataset.sort;
+      if (!SORT_MODES.includes(mode) || mode === state.sortMode) return;
+      state.sortMode = mode;
+      persistSort(mode);
+      syncSortButtons();
+      if (state.event) renderGifts(state.event.gifts);
     });
   });
 
