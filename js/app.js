@@ -178,8 +178,59 @@
     document.querySelectorAll(".gift-sort-btn").forEach((btn) => {
       const active = btn.dataset.sort === state.sortMode;
       btn.classList.toggle("is-active", active);
-      btn.setAttribute("aria-pressed", String(active));
+      btn.setAttribute("aria-checked", String(active));
     });
+    const dot = document.querySelector(".gift-sort-dot");
+    if (dot) dot.hidden = state.sortMode === "padrao";
+    const toggle = document.querySelector(".gift-sort-toggle");
+    if (toggle) toggle.classList.toggle("is-filtered", state.sortMode !== "padrao");
+  }
+
+  function isSortMenuOpen() {
+    const menu = document.getElementById("gift-sort-menu");
+    return !!(menu && !menu.hidden);
+  }
+
+  function closeSortMenu(opts) {
+    const toggle = document.querySelector(".gift-sort-toggle");
+    const menu = document.getElementById("gift-sort-menu");
+    const filter = document.querySelector(".gift-sort-filter");
+    if (!menu || menu.hidden) return;
+    menu.hidden = true;
+    filter && filter.classList.remove("is-open");
+    const section = document.querySelector(".section-gifts");
+    if (section) section.classList.remove("has-sort-open");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      if (opts && opts.focus) toggle.focus();
+    }
+  }
+
+  function openSortMenu(opts) {
+    const toggle = document.querySelector(".gift-sort-toggle");
+    const menu = document.getElementById("gift-sort-menu");
+    const filter = document.querySelector(".gift-sort-filter");
+    if (!menu || !toggle) return;
+    menu.hidden = false;
+    filter && filter.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    const section = document.querySelector(".section-gifts");
+    if (section) section.classList.add("has-sort-open");
+    if (opts && opts.focusItem) {
+      const active = menu.querySelector(".gift-sort-btn.is-active") || menu.querySelector(".gift-sort-btn");
+      if (active) active.focus();
+    }
+  }
+
+  function applySort(mode) {
+    if (!SORT_MODES.includes(mode)) return;
+    if (mode !== state.sortMode) {
+      state.sortMode = mode;
+      persistSort(mode);
+      syncSortButtons();
+      if (state.event) renderGifts(state.event.gifts);
+    }
+    closeSortMenu({ focus: true });
   }
 
   function renderGifts(gifts) {
@@ -353,16 +404,47 @@
 
   state.sortMode = readStoredSort();
   syncSortButtons();
-  document.querySelectorAll(".gift-sort-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const mode = btn.dataset.sort;
-      if (!SORT_MODES.includes(mode) || mode === state.sortMode) return;
-      state.sortMode = mode;
-      persistSort(mode);
-      syncSortButtons();
-      if (state.event) renderGifts(state.event.gifts);
+
+  const sortToggle = document.querySelector(".gift-sort-toggle");
+  const sortMenu = document.getElementById("gift-sort-menu");
+  const sortFilter = document.querySelector(".gift-sort-filter");
+
+  if (sortToggle && sortMenu) {
+    sortToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      if (isSortMenuOpen()) closeSortMenu();
+      else openSortMenu({ focusItem: event.detail === 0 });
     });
-  });
+    sortMenu.querySelectorAll(".gift-sort-btn").forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        applySort(btn.dataset.sort);
+      });
+    });
+    document.addEventListener("click", (event) => {
+      if (!isSortMenuOpen()) return;
+      if (sortFilter && !sortFilter.contains(event.target)) closeSortMenu();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (!isSortMenuOpen()) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeSortMenu({ focus: true });
+        return;
+      }
+      if (event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "Home" || event.key === "End") {
+        const items = [...sortMenu.querySelectorAll(".gift-sort-btn")];
+        if (!items.length) return;
+        event.preventDefault();
+        const current = items.indexOf(document.activeElement);
+        let next = 0;
+        if (event.key === "ArrowDown") next = current < 0 ? 0 : (current + 1) % items.length;
+        else if (event.key === "ArrowUp") next = current < 0 ? items.length - 1 : (current - 1 + items.length) % items.length;
+        else if (event.key === "End") next = items.length - 1;
+        items[next].focus();
+      }
+    });
+  }
 
   api.getEvent().then((event) => {
     state.event = event;

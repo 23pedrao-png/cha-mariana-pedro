@@ -724,67 +724,116 @@ textarea { resize: vertical; min-height: 110px; }
 }
 
 
-/* ---------- Ordenação da lista de presentes ---------- */
+/* ---------- Filtro / ordenação da lista de presentes ---------- */
 .gift-sort {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: -18px 0 14px;
+  position: relative;
+  z-index: 5;
+}
+.gift-sort-filter {
+  position: relative;
+}
+.section-gifts.has-sort-open {
+  z-index: 45;
+}
+.gift-sort-toggle {
+  appearance: none;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--terracotta);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin: -8px auto 32px;
-  max-width: 100%;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.gift-sort-label {
-  margin: 0;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--terracotta);
+.gift-sort-toggle:hover,
+.gift-sort-filter.is-open .gift-sort-toggle {
+  background: var(--terracotta-soft);
 }
-.gift-sort-pills {
-  display: inline-flex;
-  max-width: 100%;
+.gift-sort-toggle:focus-visible {
+  outline: 1px dashed var(--terracotta);
+  outline-offset: 3px;
+}
+.gift-sort-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.gift-sort-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  box-shadow: 0 0 0 1.5px var(--paper-light);
+  pointer-events: none;
+}
+.gift-sort-dot[hidden] { display: none; }
+.gift-sort-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 188px;
+  padding: 6px;
+  background: var(--paper-light);
   border: 1px solid rgba(138, 79, 61, 0.4);
-  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 28px rgba(60, 38, 30, 0.16);
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
+.gift-sort-menu[hidden] { display: none; }
 .gift-sort-btn {
   appearance: none;
+  position: relative;
+  width: 100%;
   border: 0;
   background: transparent;
   color: var(--terracotta);
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 8px 16px;
+  padding: 10px 14px 10px 34px;
   min-height: 40px;
   line-height: 1.2;
+  text-align: left;
   white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.gift-sort-btn + .gift-sort-btn {
-  border-left: 1px solid rgba(138, 79, 61, 0.28);
-}
-.gift-sort-btn:hover:not(.is-active) {
+.gift-sort-btn:hover {
   background: var(--terracotta-soft);
 }
 .gift-sort-btn.is-active {
-  background: var(--terracotta);
-  color: var(--paper-light);
   font-weight: 500;
+}
+.gift-sort-btn.is-active::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 9px;
+  height: 5px;
+  border-left: 1.5px solid var(--terracotta);
+  border-bottom: 1.5px solid var(--terracotta);
+  transform: translateY(-65%) rotate(-45deg);
 }
 .gift-sort-btn:focus-visible {
   outline: 1px dashed var(--terracotta);
-  outline-offset: 3px;
-  z-index: 1;
-}
-@media (min-width: 641px) {
-  .gift-sort {
-    flex-direction: row;
-    gap: 16px;
-  }
+  outline-offset: -2px;
 }
 /* ---------- Responsivo ---------- */
 @media (min-width: 1500px) { :root { --tile: calc(100vw / 18); } }
@@ -828,19 +877,20 @@ textarea { resize: vertical; min-height: 110px; }
 
 @media (max-width: 640px) {
   .gift-sort {
-    margin: -8px auto 20px;
-    gap: 8px;
+    margin: -12px 0 10px;
   }
-  .gift-sort-pills {
-    width: 100%;
-    max-width: 420px;
+  .gift-sort-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  .gift-sort-menu {
+    min-width: 176px;
   }
   .gift-sort-btn {
-    flex: 1 1 0;
-    padding: 7px 6px;
-    min-height: 34px;
-    font-size: 0.58rem;
-    letter-spacing: 0.04em;
+    min-height: 38px;
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    padding: 9px 12px 9px 32px;
   }
   .section-gifts {
     padding-left: 12px;
