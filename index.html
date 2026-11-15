@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#5C3030" />
+  <title>Chá de Casa Nova e Noivado · Mariana e Pedro</title>
+  <meta name="description" content="Celebre conosco o chá de casa nova e noivado de Mariana e Pedro, no dia 30 de janeiro de 2027, em Belo Horizonte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="preview-banner" id="preview-banner" hidden>
+    Modo de prévia: as confirmações e os presentes ficam só neste navegador até o Apps Script ser publicado.
+  </div>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="header-inner">
+      <a class="logo" href="#topo">M &amp; P</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="menu" class="site-nav" aria-label="Seções do site">
+        <a href="#quando">Data e local</a>
+        <a href="#presenca">Confirmar presença</a>
+        <a href="#presentes">Lista de presentes</a>
+        <a href="#pix">Pix</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-label="Convite">
+      <div class="hero-ornament" aria-hidden="true"></div>
+      <p class="eyebrow">Convite especial</p>
+      <p class="event-kicker" data-event-title>Chá de Casa Nova e Noivado</p>
+      <h1 class="couple-names" data-couple-names>Mariana e Pedro</h1>
+      <div class="flourish" aria-hidden="true">
+        <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 10h70M198 10h-70" stroke="currentColor" stroke-width="1"/>
+          <path d="M100 2c8 8 8 16 0 16-8-8-8-16 0-16z" stroke="currentColor" fill="none"/>
+        </svg>
+      </div>
+      <p class="hero-date" data-hero-date>Sábado, 30 de janeiro de 2027 · 16h</p>
+      <p class="hero-lead" data-hero-lead></p>
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="count-item"><span class="count-value" data-days>0</span><span class="count-label">dias</span></div>
+        <div class="count-item"><span class="count-value" data-hours>0</span><span class="count-label">horas</span></div>
+        <div class="count-item"><span class="count-value" data-minutes>0</span><span class="count-label">minutos</span></div>
+        <div class="count-item"><span class="count-value" data-seconds>0</span><span class="count-label">segundos</span></div>
+      </div>
+      <a class="btn btn-primary hero-cta" href="#presenca">Confirmar presença</a>
+    </section>
+
+    <section id="quando" class="section section-when">
+      <div class="section-inner">
+        <p class="eyebrow">A celebração</p>
+        <h2>Data, local e mapa</h2>
+        <div class="flourish small" aria-hidden="true">
+          <svg viewBox="0 0 200 20" fill="none"><path d="M40 10h50M160 10h-50" stroke="currentColor" stroke-width="1"/><path d="M100 4c6 6 6 12 0 12-6-6-6-12 0-12z" stroke="currentColor"/></svg>
+        </div>
+
+        <div class="when-grid">
+          <article class="info-card">
+            <h3>Quando</h3>
+            <p class="info-main" data-date-full>Sábado, 30 de janeiro de 2027</p>
+            <p data-time-full>Às 16h</p>
+          </article>
+          <article class="info-card">
+            <h3>Onde</h3>
+            <p class="info-main" data-venue-name>Salão de festas</p>
+            <p data-venue-address>Rua Psi, 185 — Caiçara<br>Belo Horizonte — MG</p>
+          </article>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            id="mapa"
+            title="Mapa do local da festa"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRua+Psi,+185,+Cai%C3%A7aras,+Belo+Horizonte,+MG"
+          ></iframe>
+        </div>
+        <div class="map-actions">
+          <a class="btn btn-secondary" data-maps-link target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Rua+Psi%2C+185%2C+Cai%C3%A7ara%2C+Belo+Horizonte%2C+MG">Abrir no Google Maps</a>
+          <a class="btn btn-ghost" data-waze-link target="_blank" rel="noopener noreferrer" href="https://waze.com/ul?q=Rua%20Psi%2C%20185%2C%20Cai%C3%A7ara%2C%20Belo%20Horizonte%20-%20MG&navigate=yes">Abrir no Waze</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="presenca" class="section section-rsvp">
+      <div class="section-inner narrow">
+        <p class="eyebrow">Esperamos você</p>
+        <h2>Confirmação de presença</h2>
+        <p class="section-lead">Conte pra gente se poderá celebrar esse momento conosco. É rápido e nos ajuda muito na organização.</p>
+
+        <form id="rsvp-form" class="rsvp-form" novalidate>
+          <label>
+            <span>Seu nome</span>
+            <input type="text" name="name" autocomplete="name" required maxlength="120" placeholder="Nome e sobrenome" />
+          </label>
+          <label>
+            <span>Número de pessoas (incluindo você)</span>
+            <input type="number" name="guests" min="1" max="20" value="1" required />
+          </label>
+          <fieldset>
+            <legend>Você poderá comparecer?</legend>
+            <div class="choice-row">
+              <label class="choice">
+                <input type="radio" name="attending" value="true" required checked />
+                <span>Sim, estarei lá</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="attending" value="false" />
+                <span>Não poderei ir</span>
+              </label>
+            </div>
+          </fieldset>
+          <label>
+            <span>Mensagem <em>(opcional)</em></span>
+            <textarea name="message" rows="4" maxlength="500" placeholder="Um carinho, um recado, uma restrição alimentar…"></textarea>
+          </label>
+          <p class="form-error" id="rsvp-error" hidden></p>
+          <button class="btn btn-primary" type="submit">Enviar confirmação</button>
+        </form>
+        <div class="rsvp-success" id="rsvp-success" hidden>
+          <p class="success-title">Confirmação registrada</p>
+          <p id="rsvp-success-text">Obrigado! Recebemos a sua resposta com carinho.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="presentes" class="section section-gifts">
+      <div class="section-inner">
+        <p class="eyebrow">Para o nosso lar</p>
+        <h2>Lista de presentes</h2>
+        <p class="section-lead" data-gifts-intro></p>
+        <div class="gift-grid" id="gift-grid"></div>
+      </div>
+    </section>
+
+    <section id="pix" class="section section-pix">
+      <div class="section-inner narrow">
+        <p class="eyebrow">Presente em dinheiro</p>
+        <h2>Pix para o casal</h2>
+        <p class="section-lead" data-pix-intro></p>
+        <div class="pix-card" data-pix-card>
+          <p class="pix-badge" data-pix-badge hidden>Chave de exemplo</p>
+          <img class="pix-qr" data-pix-qr alt="QR Code da chave Pix" src="" width="280" height="280" />
+          <p class="pix-label">Chave Pix</p>
+          <p class="pix-key" data-pix-key>chave-pix-exemplo@email.com</p>
+          <button class="btn btn-secondary" type="button" data-copy-brcode>Copiar código Pix (copia e cola)</button>
+          <button class="btn btn-ghost" type="button" data-copy-pix>Copiar chave Pix</button>
+          <p class="pix-notice" data-pix-notice></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-mono">M &amp; P</p>
+    <p>Mariana e Pedro · 30 de janeiro de 2027</p>
+    <p class="footer-note">Feito com carinho para o nosso chá de casa nova e noivado.</p>
+  </footer>
+
+  <div class="modal" id="modal-pix" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="pix-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">&times;</button>
+      <p class="eyebrow">Presentear via Pix</p>
+      <h3 id="pix-modal-title">Presente</h3>
+      <p class="modal-price" data-modal-price></p>
+      <img class="pix-qr" data-modal-qr alt="QR Code da chave Pix" src="" width="240" height="240" />
+      <p class="pix-label">Chave Pix</p>
+      <p class="pix-key" data-modal-key></p>
+      <button class="btn btn-secondary" type="button" data-copy-brcode>Copiar código Pix (copia e cola)</button>
+      <button class="btn btn-ghost" type="button" data-modal-copy>Copiar chave Pix</button>
+      <p class="pix-notice" data-modal-notice></p>
+      <button class="btn btn-primary" type="button" data-modal-confirm>Já enviei o Pix</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-confirm" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">&times;</button>
+      <h3 id="confirm-modal-title">Confirmar presente</h3>
+      <p class="section-lead" data-confirm-text>Para que os demais convidados vejam que este item já foi escolhido, diga o seu nome.</p>
+      <form id="confirm-form">
+        <label>
+          <span>Seu nome</span>
+          <input type="text" name="name" required maxlength="120" placeholder="Nome e sobrenome" autocomplete="name" />
+        </label>
+        <p class="form-error" id="confirm-error" hidden></p>
+        <button class="btn btn-primary" type="submit">Confirmar que já comprei</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden role="status"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/pix.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
