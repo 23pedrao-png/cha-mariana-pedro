@@ -566,6 +566,7 @@ textarea { resize: vertical; min-height: 110px; }
   text-decoration-thickness: 1px;
 }
 .gift-confirm-link:hover { color: var(--terracotta-dark); }
+.btn-label-short { display: none; }
 
 /* Presente já comprado: imagem apagada + carimbo terracota */
 .gift-card.is-purchased .gift-image-wrap img { filter: grayscale(1) sepia(0.15) opacity(0.4); }
@@ -759,9 +760,81 @@ textarea { resize: vertical; min-height: 110px; }
   .hero-place { max-width: 240px; }
   .choice-row { grid-template-columns: 1fr; }
   .frieze { height: 26px; background-size: 26px 26px; }
-  .gift-grid { gap: 18px; }
-  .gift-image-wrap { aspect-ratio: 16 / 10; }
   .map-actions .btn { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .section-gifts {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .gift-grid {
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .gift-card {
+    min-width: 0;
+    border-width: clamp(6px, 1.8vw, 12px);
+  }
+  .gift-image-wrap {
+    aspect-ratio: 1;
+    margin: 0;
+  }
+  .gift-body {
+    padding: 7px 4px 5px;
+    gap: 2px;
+  }
+  .gift-body h3 {
+    font-size: clamp(0.58rem, 2.7vw, 0.88rem);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .gift-desc { display: none; }
+  .gift-price {
+    margin: 1px 0 3px;
+    font-size: clamp(0.58rem, 2.5vw, 0.8rem);
+    letter-spacing: 0.04em;
+  }
+  .gift-actions { gap: 4px; }
+  .gift-actions .btn-label-full { display: none; }
+  .gift-actions .btn-label-short { display: inline; }
+  .gift-actions .btn {
+    min-height: 28px;
+    padding: 1px 2px;
+    border-width: 5px;
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    gap: 0;
+  }
+  .gift-confirm-link {
+    padding: 3px 0 1px;
+    font-size: 0.58rem;
+    letter-spacing: 0.01em;
+    text-underline-offset: 2px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+  .ribbon {
+    padding: 3px 4px 2px;
+    font-size: clamp(0.5rem, 2.2vw, 0.7rem);
+    letter-spacing: 0.06em;
+    border-width: 1px;
+    outline-width: 1px;
+    outline-offset: 1px;
+    box-shadow: none;
+    white-space: nowrap;
+    max-width: calc(100% - 6px);
+  }
+  .purchased-by {
+    margin-top: 4px;
+    padding: 5px 0 0;
+    font-size: clamp(0.85rem, 3.4vw, 1.15rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
