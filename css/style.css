@@ -159,7 +159,18 @@ button { cursor: pointer; }
   letter-spacing: 0.01em;
 }
 .hero-script-top { margin-bottom: clamp(32px, 7vh, 72px); }
-.hero-script-bottom { margin-top: clamp(32px, 7vh, 72px); }
+.hero-script-bottom { margin-top: clamp(24px, 5vh, 52px); }
+/* listra de azulejos logo abaixo dos nomes */
+.hero-stripe {
+  --stripe: clamp(44px, 5.4vw, 68px);
+  align-self: stretch;
+  height: var(--stripe);
+  margin-top: clamp(24px, 4.5vh, 44px);
+  background-image: url("../img/frame-tile.svg");
+  background-size: var(--stripe) var(--stripe);
+  background-position: 0 0;
+  background-repeat: round;
+}
 .hero-names {
   margin: 0;
   font-family: var(--font-display);
@@ -216,7 +227,7 @@ button { cursor: pointer; }
 /* ---------- Frisos e ornamentos com o azulejo ---------- */
 .frieze {
   height: 34px;
-  background: url("../img/frame-tile.svg") center / 34px 34px repeat-x;
+  background: url("../img/frame-tile.svg") 0 0 / 34px 34px repeat-x;
   background-repeat: round no-repeat;
   opacity: 0.9;
 }
