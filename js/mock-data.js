@@ -23,7 +23,7 @@ window.MOCK_EVENT = {
     mapsEmbedUrl: "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRua+Psi,+185,+Cai%C3%A7aras,+Belo+Horizonte,+MG"
   },
   copy: {
-    heroSubtitle: "Com o coração cheio de alegria, convidamos você para celebrar conosco o nosso noivado e a nossa casa nova.",
+    heroSubtitle: "Com o coração cheio de alegria, convidamos você para celebrar conosco o nosso noivado e a nossa nova casa!",
     giftsIntro: "Sua presença é o nosso maior presente. Se quiser nos presentear, preparamos algumas sugestões para o nosso lar. Você pode enviar o valor via Pix ou comprar direto na loja.",
     pixIntro: "Se preferir nos presentear com um valor em dinheiro, use o Pix abaixo. Qualquer quantia será recebida com muito carinho.",
     pixPlaceholderNotice: "Atenção: esta é uma chave Pix de exemplo e será atualizada em breve."

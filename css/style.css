@@ -194,7 +194,7 @@ button { cursor: pointer; }
   margin: 0.08em 0 0.02em;
 }
 .hero-meta {
-  margin-top: clamp(28px, 5vh, 48px);
+  margin-top: clamp(16px, 3vh, 28px);
   display: grid;
   gap: 6px;
   justify-items: center;
@@ -218,9 +218,16 @@ button { cursor: pointer; }
 .hero-ctas {
   margin-top: clamp(24px, 4vh, 40px);
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
   justify-content: center;
+  width: 100%;
+  max-width: 520px;
+}
+.hero-ctas .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* ---------- Frisos e ornamentos com o azulejo ---------- */
@@ -288,13 +295,14 @@ button { cursor: pointer; }
 }
 
 /* Contagem regressiva */
-.section-intro { padding-top: clamp(48px, 7vw, 80px); padding-bottom: clamp(48px, 7vw, 80px); }
+.section-intro { padding-top: clamp(32px, 5vw, 64px); padding-bottom: clamp(48px, 7vw, 80px); }
 .hero-lead {
-  margin: 0 auto 32px;
+  margin: clamp(28px, 5vh, 48px) auto 0;
   max-width: 560px;
+  padding: 0 8px;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1.25rem, 2.6vw, 1.55rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
   line-height: 1.5;
   color: var(--ink);
 }
@@ -868,8 +876,22 @@ textarea { resize: vertical; min-height: 110px; }
 @media (max-width: 540px) {
   :root { --tile: calc(100vw / 8); }
   .hero-name { font-size: clamp(2.7rem, 15vw, 4.2rem); }
-  .hero-ctas { flex-direction: column; width: 100%; max-width: 280px; }
-  .hero-ctas .btn { width: 100%; }
+  .hero-ctas {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: none;
+    gap: 8px;
+  }
+  .hero-ctas .btn {
+    flex: 1 1 0;
+    width: auto;
+    min-height: 40px;
+    padding: 2px 6px;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    border-width: 7px;
+  }
   .hero-place { max-width: 240px; }
   .choice-row { grid-template-columns: 1fr; }
   .frieze { height: 26px; background-size: 26px 26px; }
