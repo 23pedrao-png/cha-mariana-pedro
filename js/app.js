@@ -367,7 +367,7 @@
     const form = e.target;
     const payload = {
       name: form.name.value.trim(),
-      guests: Number(form.guests.value),
+      guests: 1,
       attending: form.attending.value === "true",
       message: form.message.value.trim(),
     };
@@ -377,7 +377,7 @@
       const success = document.getElementById("rsvp-success");
       const text = document.getElementById("rsvp-success-text");
       text.textContent = result.rsvp.attending
-        ? `Obrigado, ${result.rsvp.name}! Registramos a presença de ${result.rsvp.guests} ${result.rsvp.guests === 1 ? "pessoa" : "pessoas"}.`
+        ? `Obrigado, ${result.rsvp.name}! Registramos a sua presença.`
         : `Obrigado, ${result.rsvp.name}! Sentiremos sua falta, mas agradecemos por avisar.`;
       success.hidden = false;
       success.scrollIntoView({ behavior: "smooth", block: "center" });

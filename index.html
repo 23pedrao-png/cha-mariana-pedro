@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Sacramento&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=17" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
 </head>
 <body>
   <div class="preview-banner" id="preview-banner" hidden>
@@ -110,19 +110,15 @@
         <p class="eyebrow script">Esperamos você</p>
         <h2>Confirmação de presença</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
-        <p class="section-lead">Conte pra gente se poderá celebrar esse momento conosco. É rápido e nos ajuda muito na organização.</p>
+        <p class="section-lead">Sua presença é muito importante pra nós! Confirme sua presença, mesmo que não possa vir, para organizarmos tudo com carinho.<span data-rsvp-deadline hidden></span></p>
 
         <form id="rsvp-form" class="rsvp-form" novalidate>
           <label>
             <span>Seu nome</span>
             <input type="text" name="name" autocomplete="name" required maxlength="120" placeholder="Nome e sobrenome" />
           </label>
-          <label>
-            <span>Número de pessoas (incluindo você)</span>
-            <input type="number" name="guests" min="1" max="20" value="1" required />
-          </label>
           <fieldset>
-            <legend>Você poderá comparecer?</legend>
+            <legend>Podemos contar com você?</legend>
             <div class="choice-row">
               <label class="choice">
                 <input type="radio" name="attending" value="true" required checked />
@@ -130,7 +126,7 @@
               </label>
               <label class="choice">
                 <input type="radio" name="attending" value="false" />
-                <span>Não poderei ir</span>
+                <span>Infelizmente não poderei ir</span>
               </label>
             </div>
           </fieldset>
@@ -139,7 +135,7 @@
             <textarea name="message" rows="4" maxlength="500" placeholder="Um carinho, um recado, uma restrição alimentar…"></textarea>
           </label>
           <p class="form-error" id="rsvp-error" hidden></p>
-          <button class="btn btn-primary" type="submit">Enviar confirmação</button>
+          <button class="btn btn-primary" type="submit">Confirmar presença</button>
         </form>
         <div class="rsvp-success" id="rsvp-success" hidden>
           <p class="success-title">Confirmação registrada</p>
@@ -241,11 +237,11 @@
 
   <div class="toast" id="toast" hidden role="status"></div>
 
-  <script src="js/config.js?v=17"></script>
-  <script src="js/qrcode.min.js?v=17"></script>
-  <script src="js/pix.js?v=17"></script>
-  <script src="js/mock-data.js?v=17"></script>
-  <script src="js/api.js?v=17"></script>
-  <script src="js/app.js?v=17"></script>
+  <script src="js/config.js?v=18"></script>
+  <script src="js/qrcode.min.js?v=18"></script>
+  <script src="js/pix.js?v=18"></script>
+  <script src="js/mock-data.js?v=18"></script>
+  <script src="js/api.js?v=18"></script>
+  <script src="js/app.js?v=18"></script>
 </body>
 </html>
