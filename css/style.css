@@ -115,15 +115,15 @@ button { cursor: pointer; }
   color: var(--terracotta);
 }
 .logo span { font-family: var(--font-script); font-size: 1.5rem; padding: 0 0.1em; }
-/* faixa curta de azulejos ao lado do monograma */
+/* um único azulejo ao lado do monograma */
 .header-tile {
-  flex: 0 0 120px;
-  width: 120px;
+  flex: 0 0 40px;
+  width: 40px;
   height: 40px;
   background-image: url("../img/frame-tile.svg");
   background-size: 40px 40px;
-  background-position: left center;
-  background-repeat: round;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0.88;
 }
 .site-nav { display: flex; gap: 30px; }
@@ -889,11 +889,6 @@ textarea { resize: vertical; min-height: 110px; }
 
 @media (max-width: 860px) {
   .header-brand { flex: 1 1 auto; }
-  .header-tile {
-    flex: 1 1 auto;
-    width: auto;
-    min-width: 40px;
-  }
   .nav-toggle { display: flex; }
   .site-nav {
     position: absolute;
