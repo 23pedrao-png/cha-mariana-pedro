@@ -24,7 +24,7 @@ window.MOCK_EVENT = {
   },
   copy: {
     heroSubtitle: "Com o coração cheio de alegria, convidamos você para celebrar conosco o nosso noivado e a nossa nova casa!",
-    giftsIntro: "Sua presença é o nosso maior presente! Mas, se quiser nos presentear, preparamos algumas sugestões para o nosso lar. Você pode comprar direto na loja ou enviar o valor via Pix.",
+    giftsIntro: "Sua presença é o nosso maior presente! Mas, se quiser nos presentear, preparamos algumas sugestões para o nosso lar. Você pode comprar direto na loja pelo link abaixo ou enviar o valor via Pix.",
     pixIntro: "Se preferir nos presentear com um valor em dinheiro, use o Pix abaixo. Qualquer quantia será recebida com muito carinho.",
     pixPlaceholderNotice: "Atenção: esta é uma chave Pix de exemplo e será atualizada em breve."
   },
