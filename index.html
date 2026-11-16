@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Sacramento&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=21" />
+  <link rel="stylesheet" href="css/style.css?v=22" />
 </head>
 <body>
   <div class="preview-banner" id="preview-banner" hidden>
@@ -155,9 +155,20 @@
         <p class="eyebrow script">Para o nosso lar</p>
         <h2>Lista de presentes</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
-        <p class="section-lead" data-gifts-intro></p>
-        <p class="gift-reminder">Depois de comprar ou enviar o Pix, não esqueça de clicar em <strong>“Já comprei”</strong> no presente. Assim ele aparece como comprado e ajuda a gente na organização. Obrigado! ♡</p>
-        <p class="volt-note"><svg class="volt-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg> <strong>Atenção:</strong> todos os eletrodomésticos devem ser <strong>127V</strong>.</p>
+        <div class="gifts-intro">
+          <p class="gifts-lead-hook">Sua presença é o nosso maior presente!</p>
+          <p class="gifts-lead-body">Mas, se quiser nos presentear, preparamos algumas sugestões para o nosso lar. Você pode comprar direto na loja ou enviar o valor via Pix.</p>
+          <aside class="gift-info" aria-labelledby="gift-info-title">
+            <h3 class="gift-info-title" id="gift-info-title">Informações importantes</h3>
+            <ul class="gift-info-list">
+              <li>Depois de comprar ou enviar o Pix, clique em <strong>“Eu já escolhi esse”</strong> no presente escolhido. Assim ele aparece como já presenteado e evita que outra pessoa compre o mesmo item.</li>
+              <li>Se preferir, a compra pode ser enviada direto para o nosso apartamento:
+                <address class="gift-info-address">Rua Psi, 185, Caiçara, Belo Horizonte, CEP 30775-460<br>Apartamento 1002B (Mariana Redoan ou Pedro Magalhães)</address>
+              </li>
+              <li>Todos os eletrodomésticos devem ser <strong>127V</strong>, a voltagem da nossa casa.</li>
+            </ul>
+          </aside>
+        </div>
         <div class="gift-sort">
           <div class="gift-sort-filter">
             <button type="button" class="gift-sort-toggle" id="gift-sort-toggle" aria-label="Ordenar por preço" aria-haspopup="menu" aria-expanded="false" aria-controls="gift-sort-menu">
@@ -218,7 +229,7 @@
       <button class="btn btn-secondary" type="button" data-copy-brcode>Copiar código Pix (copia e cola)</button>
       <button class="btn btn-ghost" type="button" data-modal-copy>Copiar chave Pix</button>
       <p class="pix-notice" data-modal-notice></p>
-      <button class="btn btn-primary" type="button" data-modal-confirm>Já enviei o Pix</button>
+      <button class="btn btn-primary" type="button" data-modal-confirm>Eu já escolhi esse</button>
     </div>
   </div>
 
@@ -234,18 +245,18 @@
           <input type="text" name="name" required maxlength="120" placeholder="Nome e sobrenome" autocomplete="name" />
         </label>
         <p class="form-error" id="confirm-error" hidden></p>
-        <button class="btn btn-primary" type="submit">Confirmar que já comprei</button>
+        <button class="btn btn-primary" type="submit">Confirmar que já escolhi esse</button>
       </form>
     </div>
   </div>
 
   <div class="toast" id="toast" hidden role="status"></div>
 
-  <script src="js/config.js?v=19"></script>
-  <script src="js/qrcode.min.js?v=19"></script>
-  <script src="js/pix.js?v=19"></script>
-  <script src="js/mock-data.js?v=19"></script>
-  <script src="js/api.js?v=19"></script>
-  <script src="js/app.js?v=19"></script>
+  <script src="js/config.js?v=22"></script>
+  <script src="js/qrcode.min.js?v=22"></script>
+  <script src="js/pix.js?v=22"></script>
+  <script src="js/mock-data.js?v=22"></script>
+  <script src="js/api.js?v=22"></script>
+  <script src="js/app.js?v=22"></script>
 </body>
 </html>

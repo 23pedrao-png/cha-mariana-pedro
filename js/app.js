@@ -107,7 +107,6 @@
     setText("[data-time-full]", `Às ${ev.timeDisplay}`);
     setText("[data-venue-name]", venue.name);
     setText("[data-venue-address]", `${venue.street} — ${venue.neighborhood}<br>${venue.city} — ${venue.state}`, true);
-    setText("[data-gifts-intro]", copy.giftsIntro);
     setText("[data-pix-intro]", copy.pixIntro);
     setText("[data-pix-key], [data-modal-key]", pix.key);
     setText("[data-pix-notice], [data-modal-notice]", pix.isPlaceholder ? copy.pixPlaceholderNotice : "");
@@ -242,7 +241,7 @@
       card.innerHTML = `
         <div class="gift-image-wrap">
           <img src="${gift.image}" alt="${gift.name}" />
-          ${gift.purchased ? '<span class="ribbon">Comprado ✓</span>' : ""}
+          ${gift.purchased ? '<span class="ribbon">Já presenteado</span>' : ""}
         </div>
         <div class="gift-body">
           <h3>${gift.name}</h3>
@@ -252,7 +251,7 @@
             <div class="gift-actions">
               <button class="btn btn-primary" type="button" data-action="pix"><span class="btn-label-full">Presentear via Pix</span><span class="btn-label-short">Pix</span></button>
               <a class="btn btn-secondary" data-action="store" href="${gift.storeUrl}" target="_blank" rel="noopener noreferrer"><span class="btn-label-full">Comprar na loja</span><span class="btn-label-short">Loja</span></a>
-              <button class="gift-confirm-link" type="button" data-action="confirm"><span class="btn-label-full">Já comprei / Já enviei o Pix</span><span class="btn-label-short">Já comprei</span></button>
+              <button class="gift-confirm-link" type="button" data-action="confirm"><span class="btn-label-full">Eu já escolhi esse</span><span class="btn-label-short">Já escolhi</span></button>
             </div>
           `}
         </div>
@@ -348,7 +347,7 @@
       state.event.gifts = gifts;
       renderGifts(gifts);
       closeModal();
-      showToast("Presente marcado como comprado. Obrigado!");
+      showToast("Presente marcado como já presenteado. Obrigado!");
     } catch (err) {
       if (err.status === 409 && err.data?.gift) {
         const gifts = state.event.gifts.map((g) => (g.id === err.data.gift.id ? err.data.gift : g));
